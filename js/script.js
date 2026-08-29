@@ -122,3 +122,24 @@ filterButtons.forEach(function (button) {
     });
 
 });
+
+
+const signalDot = document.querySelector(".signal-dot");
+const headerSignal = document.querySelector(".header-signal");
+
+window.addEventListener("scroll", function () {
+
+    const scrollTop = window.scrollY;
+
+    const pageHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+
+    const progress =
+        pageHeight > 0 ? scrollTop / pageHeight : 0;
+
+    const maxMove =
+        headerSignal.offsetWidth - signalDot.offsetWidth;
+
+    signalDot.style.left =
+        progress * maxMove + "px";
+});
