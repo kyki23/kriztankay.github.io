@@ -56,12 +56,16 @@ body {
 .nav a {
 	color: #888;
 	text-decoration: none;
-	font-size: 13px;
+	font-size: 11px;
 	letter-spacing: 4px;
 }
 
 .nav a:hover {
 	color: #00e6cc;
+}
+
+.menu-toggle {
+	display: none;
 }
 
 .book-button {
@@ -96,10 +100,10 @@ body {
 
 .hero-label {
 	color: #00e6cc;
-	font-size: 14px;
+	font-size: 11px;
 	letter-spacing: 8px;
 
-	background: rgba(0, 0, 0, 0.65);
+	background: rgba(0, 0, 0, 0.95);
 
 	width: calc(100% + 6vw);
 	margin-left: -3vw;
@@ -128,7 +132,7 @@ body {
 	max-width: 650px;
 
 	color: #aaa;
-	font-size: 18px;
+	font-size: 17px;
 	line-height: 1.8;
 }
 
@@ -156,6 +160,103 @@ body {
 	border: 1px solid #666;
 	color: #f1eee8;
 }
+
+.primary-button,
+.secondary-button {
+	transition: 0.3s ease;
+}
+
+.primary-button:hover {
+	background: transparent;
+	color: white;
+	border-color: white;
+	border: 2px solid #666;
+	font-size: 15px;
+
+}
+
+.secondary-button:hover {
+	background: #00e6cc;
+	color: #000;
+	border-color: #00e6cc;
+	font-size: 15px;
+}
+
+@media (max-width: 700px) {
+
+	.hero h1 {
+		font-size: clamp(70px, 21vw, 105px);
+	}
+
+	.hero-content {
+		width: 100%;
+		max-width: 100%;
+	}
+
+	.hero-label {
+		width: calc(100% + 8vw);
+		margin-left: -4vw;
+		padding: 8px 4vw;
+
+		background: rgba(0, 0, 0, 0.7);
+
+		font-size: 10px;
+		letter-spacing: 5px;
+		line-height: 1.6;
+	}
+
+	.site-header {
+		height: 64px;
+		padding: 0 4vw;
+	}
+
+	.logo img {
+		width: 95px;
+	}
+
+	.menu-toggle {
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+		margin-left: auto;
+
+		background: none;
+		border: none;
+		cursor: pointer;
+	}
+
+	.menu-toggle span {
+		width: 26px;
+		height: 2px;
+		background: #00e6cc;
+	}
+
+	.nav {
+		display: none;
+
+		position: absolute;
+		top: 64px;
+		left: 0;
+
+		width: 100%;
+		padding: 30px 4vw;
+
+		background: #050505;
+
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 25px;
+
+		border-bottom: 1px solid #222;
+	}
+
+	.nav.open {
+		display: flex;
+	}
+
+
+}
+
 
 /* SCROLL  */
 
@@ -276,6 +377,7 @@ body {
 	font-family: 'Bebas Neue', sans-serif;
 	font-size: 22px;
 	margin-bottom: 10px;
+	letter-spacing: 1.1px;
 }
 
 .service p {
@@ -306,6 +408,9 @@ body {
 	display: block;
 	border-bottom: 3px solid #00e6cc;
 }
+
+/* RESPONSIVE ABOUT */
+
 
 @media (max-width: 700px) {
 
@@ -342,4 +447,297 @@ body {
 	.services-grid {
 		grid-template-columns: 1fr;
 	}
+}
+
+/* DISCOGRAPHY */
+
+.discography {
+	padding: 150px 3vw;
+	background: #050505;
+	border-top: 1px solid #222;
+}
+
+.discography-top {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	gap: 60px;
+}
+
+.discography h2 {
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: 82px;
+	line-height: 0.92;
+}
+
+.discography-intro {
+	max-width: 420px;
+	text-align: right;
+}
+
+.discography-intro p {
+	color: #aaa;
+	font-size: 16px;
+	line-height: 1.7;
+	margin-bottom: 18px;
+}
+
+.spotify-link {
+	color: #aaa;
+	text-decoration: none;
+	font-family: 'Roboto Mono', monospace;
+	font-size: 13px;
+	letter-spacing: 3px;
+}
+
+.spotify-link:hover {
+	color: #00e6cc;
+}
+
+/* FILTERS */
+
+.music-filters {
+	display: flex;
+	gap: 30px;
+	margin: 60px 0 50px;
+}
+
+.music-filters button {
+	background: none;
+	border: none;
+	color: #777;
+	font-family: 'Roboto Mono', monospace;
+	font-size: 13px;
+	letter-spacing: 3px;
+	cursor: pointer;
+	padding-bottom: 10px;
+}
+
+.music-filters button:hover,
+.music-filters button.active {
+	color: #f1eee8;
+	border-bottom: 1px solid #00e6cc;
+}
+
+/* MUSIC CARDS */
+
+.music-grid {
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-columns: calc((100% - 112px) / 5);
+	gap: 28px;
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+}
+
+.music-card img {
+	width: 100%;
+	aspect-ratio: 1 / 1;
+	object-fit: cover;
+	display: block;
+	margin-bottom: 18px;
+}
+
+.music-card h3 {
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: 22px;
+	margin-bottom: 6px;
+}
+
+.music-card p {
+	color: #777;
+	font-size: 14px;
+	margin-bottom: 6px;
+}
+
+.music-card span {
+	color: #00e6cc;
+	font-size: 13px;
+	font-family: 'Roboto Mono', monospace;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+
+	.discography {
+		padding: 90px 4vw;
+	}
+
+	.discography-top {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.discography-intro {
+		text-align: left;
+		max-width: 100%;
+	}
+
+	.discography h2 {
+		font-size: 64px;
+	}
+
+	.music-filters {
+		flex-wrap: wrap;
+	}
+
+	.music-grid {
+		grid-auto-columns: calc((100% - 16px) / 2);
+		gap: 16px;
+		scroll-snap-type: x mandatory;
+	}
+
+	.music-card {
+		min-width: 0;
+		scroll-snap-align: start;
+	}
+
+	.music-image {
+		width: 100%;
+		aspect-ratio: 1 / 1;
+	}
+
+	.music-image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.music-card h3 {
+		font-size: 20px;
+		line-height: 1;
+		margin-top: 12px;
+	}
+
+	.music-card p {
+		font-size: 13px;
+	}
+
+	.music-card>span {
+		font-size: 12px;
+		line-height: 1.5;
+	}
+
+	.music-navigation {
+		margin-top: 45px;
+	}
+}
+
+/* MUSIC HOVER */
+
+.music-image {
+	position: relative;
+	overflow: hidden;
+}
+
+.music-image img {
+	width: 100%;
+	display: block;
+	transition: 0.4s ease;
+}
+
+.music-hover {
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.48);
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	opacity: 0;
+	transition: 0.3s ease;
+}
+
+.music-image:hover .music-hover {
+	opacity: 1;
+}
+
+.music-image:hover img {
+	transform: scale(1.03);
+}
+
+.play-button {
+	width: 56px;
+	height: 56px;
+
+	border: 1px solid #00e6cc;
+	border-radius: 50%;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	color: #00e6cc;
+	font-size: 16px;
+}
+
+.year {
+	position: absolute;
+	top: 12px;
+	left: 12px;
+
+	z-index: 2;
+
+	background: rgba(0, 0, 0, 0.6);
+	color: #aaa;
+
+	padding: 4px 8px;
+	font-size: 11px;
+}
+
+.card-spotify {
+	position: absolute;
+	right: 12px;
+	bottom: 12px;
+
+	color: #00e6cc;
+	border: 1px solid #00e6cc;
+
+	padding: 7px 10px;
+
+	text-decoration: none;
+	font-size: 11px;
+}
+
+/* MUSIC NAVIGATION */
+
+
+.music-navigation {
+	margin-top: 70px;
+}
+
+.music-progress {
+	height: 1px;
+	background: #333;
+	position: relative;
+}
+
+.music-progress-active {
+	width: 10%;
+	height: 1px;
+	background: #00e6cc;
+}
+
+.music-nav-buttons {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 28px;
+}
+
+.music-nav-buttons button {
+	background: none;
+	border: none;
+
+	color: #888;
+
+	font-family: 'Roboto Mono', monospace;
+	letter-spacing: 2px;
+
+	cursor: pointer;
+}
+
+.music-nav-buttons button:hover {
+	color: #00e6cc;
 }
