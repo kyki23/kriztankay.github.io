@@ -264,6 +264,8 @@ body {
 	font-size: 15px;
 }
 
+/* MEDIA HERO */
+
 @media (max-width: 700px) {
 
 	.hero h1 {
@@ -285,6 +287,18 @@ body {
 		font-size: 10px;
 		letter-spacing: 5px;
 		line-height: 1.6;
+	}
+
+	.primary-button,
+	.secondary-button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+	}
+
+	.logo img {
+		width: 82px;
 	}
 
 	.site-header {
