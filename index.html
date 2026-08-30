@@ -421,33 +421,40 @@
 				</div>
 			</div>
 
-			<form class="contact-form">
+			<form class="contact-form" action="https://formspree.io/f/mjyvkdbv" method="POST">
 
 				<div class="form-row">
+
 					<div>
 						<label for="name">YOUR NAME</label>
-						<input id="name" type="text" placeholder="Your name">
+						<input id="name" name="name" type="text" placeholder="Your name" required>
 					</div>
 
 					<div>
 						<label for="email">EMAIL</label>
-						<input id="email" type="email" placeholder="your@email.com">
+						<input id="email" name="email" type="email" placeholder="your@email.com" required>
 					</div>
+
 				</div>
 
 				<label for="project">PROJECT TYPE</label>
-				<select id="project">
-					<option>Select a type</option>
-					<option>Music Production</option>
-					<option>Composition</option>
-					<option>Sonic Direction</option>
-					<option>Collaboration</option>
+
+				<select id="project" name="project" required>
+					<option value="">Select a type</option>
+					<option value="Music Production">Music Production</option>
+					<option value="Composition">Composition</option>
+					<option value="Sonic Direction">Sonic Direction</option>
+					<option value="Collaboration">Collaboration</option>
+					<option value="Collaboration">Booking</option>
 				</select>
 
 				<label for="message">YOUR MESSAGE</label>
-				<textarea id="message" placeholder="Tell me about your project..."></textarea>
 
-				<button type="submit">GET IN TOUCH</button>
+				<textarea id="message" name="message" placeholder="Tell me about your project..." required></textarea>
+
+				<button type="submit">
+					GET IN TOUCH
+				</button>
 
 			</form>
 

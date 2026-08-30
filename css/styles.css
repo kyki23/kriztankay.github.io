@@ -109,10 +109,56 @@ body {
 
 /* MEDIA HEADER */
 
-@media (max-width:100px) {
+@media (max-width: 1300px) {
+
+	.site-header {
+		height: 64px;
+		padding: 0 4vw;
+	}
+
+	.nav {
+		display: none;
+
+		position: absolute;
+		top: 64px;
+		left: 0;
+
+		width: 100%;
+		padding: 30px 4vw;
+
+		background: #050505;
+
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 25px;
+
+		border-bottom: 1px solid #222;
+	}
+
+	.nav.open {
+		display: flex;
+	}
+
+	.menu-toggle {
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+
+		margin-left: auto;
+
+		background: none;
+		border: none;
+		cursor: pointer;
+	}
+
+	.menu-toggle span {
+		width: 26px;
+		height: 2px;
+		background: #00e6cc;
+	}
 
 	.header-signal {
-		width: 80px;
+		width: 110px;
 	}
 }
 
@@ -492,7 +538,16 @@ body {
 
 .discography {
 	padding: 150px 3vw;
-	background: #050505;
+
+	background:
+		linear-gradient(rgba(5, 5, 5, 0.76),
+			rgba(5, 5, 5, 0.98)),
+		url("../assets/images/selected-bg.jpg");
+
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+
 	border-top: 1px solid #222;
 }
 
